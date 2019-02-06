@@ -15,6 +15,8 @@ public class Categoria {
 	private Long codigo;
 	
 	private String nome;
+	
+	private Boolean ativo;
 
 	public Long getCodigo() {
 		return codigo;
@@ -30,6 +32,15 @@ public class Categoria {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+
+	public Boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
 	}
 
 	@Override
