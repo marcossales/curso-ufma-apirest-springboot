@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "dbe1e242-2253-447d-b3d1-164206441229",
+		"_postman_id": "fc26537d-14f5-4501-bfe2-a029aa6bb016",
 		"name": "CursoApiRESTSpringBoot-UFMA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -42,7 +42,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": " {\n        \"codigo\": 6,\n        \"nome\": \"TESTE\",\n        \"ativo\": true\n    }"
+					"raw": " {\n        \n        \"nome\": \"TESTE\",\n        \"ativo\": true\n    }"
 				},
 				"url": {
 					"raw": "http://localhost:8080/categorias",
@@ -161,6 +161,112 @@
 						"categorias",
 						"7",
 						"ativo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Tópicos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/topicos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Novo Tópico",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\":\"Um titulo qualquer\",\n\t\"descricao\":\"Uma descricao qualquer\",\n\t\"categoria\": {\n\t\t\"codigo\":1\n\t},\n\t\n\t\"ativo\":true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/topicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Tópico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/topicos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Tópico",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\":\"YYYYY\",\n\t\"descricao\": \"YYYYYYYYY\",\n\t\"categoria\":{\n\t\t\"codigo\":1\n\t\n\t},\n\t\"ativo\":false\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"3"
 					]
 				}
 			},

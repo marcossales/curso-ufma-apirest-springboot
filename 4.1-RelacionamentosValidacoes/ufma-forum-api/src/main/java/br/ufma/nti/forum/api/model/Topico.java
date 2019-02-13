@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import ch.qos.logback.core.joran.spi.DefaultClass;
+
 @Entity
 @Table(name="topico")
 public class Topico {
@@ -34,8 +36,8 @@ public class Topico {
 	@JoinColumn(name="codigo_categoria")
 	private Categoria categoria;
 	
-	@NotNull
-	@Column(name="criado_em")
+	
+	@Column(name="criado_em",updatable=false)
 	private LocalDateTime  criadoEm;
 	
 	@Column(name="atualizado_em")
