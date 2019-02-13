@@ -25,7 +25,7 @@ public class Topico {
 	@Size(min=3,max=100)
 	private String titulo;
 	
-	@NotNull
+	
 	@Size(min=3,max=255)
 	private String descricao;
 	 
