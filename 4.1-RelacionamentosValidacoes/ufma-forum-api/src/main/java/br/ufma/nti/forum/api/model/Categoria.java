@@ -5,8 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "categoria")
@@ -73,6 +76,13 @@ public class Categoria {
 		} else if (!codigo.equals(other.codigo))
 			return false;
 		return true;
+	}
+
+	@JsonIgnore
+	@Transient
+	public boolean isInativo() {
+		
+		return !this.ativo;
 	}
 	
 	

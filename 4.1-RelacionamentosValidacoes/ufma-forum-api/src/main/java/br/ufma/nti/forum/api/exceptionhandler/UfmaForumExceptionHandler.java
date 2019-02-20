@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.hibernate.dialect.MySQLInnoDBDialect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -55,6 +57,15 @@ public class UfmaForumExceptionHandler extends ResponseEntityExceptionHandler{
 	}
 	
 	
+	@ExceptionHandler({DataIntegrityViolationException.class})
+	public ResponseEntity<Object> handleDataIntegrityViolationException(DataIntegrityViolationException ex,WebRequest request) {
+		String mensagemUsuario = messageSource.getMessage("recurso.operacao-nao-permitida",null, LocaleContextHolder.getLocale());
+		String mensagemDesenvolvedor = (ex.getRootCause())!=null?ex.getRootCause().toString():ex.toString();
+		List<Erro> erros = Arrays.asList(new Erro(mensagemUsuario, mensagemDesenvolvedor));
+		
+		return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+	} 
+	
 	private List<Erro> criarListaDeErros(BindingResult bindingResult){
 		List<Erro> erros = new ArrayList<>();
 		for(FieldError fieldError: bindingResult.getFieldErrors()) {
@@ -67,7 +78,7 @@ public class UfmaForumExceptionHandler extends ResponseEntityExceptionHandler{
 	}
 	
 	
-	public class Erro{
+	public static class Erro{
 		private String mensagemUsuario;
 		private String mensagemDesenvolvedor;
 		

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fc26537d-14f5-4501-bfe2-a029aa6bb016",
+		"_postman_id": "376008d3-d2a4-4398-b44c-0516db19b8b1",
 		"name": "CursoApiRESTSpringBoot-UFMA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -152,14 +152,14 @@
 					"raw": "true"
 				},
 				"url": {
-					"raw": "localhost:8080/categorias/7/ativo",
+					"raw": "localhost:8080/categorias/1/ativo",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"categorias",
-						"7",
+						"1",
 						"ativo"
 					]
 				}
@@ -256,7 +256,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"titulo\":\"YYYYY\",\n\t\"descricao\": \"YYYYYYYYY\",\n\t\"categoria\":{\n\t\t\"codigo\":1\n\t\n\t},\n\t\"ativo\":false\n\t\n}"
+					"raw": "{\n\t\"titulo\":\"YYYYY\",\n\t\"descricao\": \"YYYYYYYYY\",\n\t\"categoria\":{\n\t\t\"codigo\":1,\n\t\t\"nome\":\"Java2\"\n\t\n\t},\n\t\"ativo\":false\n\t\n}"
 				},
 				"url": {
 					"raw": "localhost:8080/topicos/3",

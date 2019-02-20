@@ -7,16 +7,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
+import br.ufma.nti.forum.api.model.Categoria;
 import br.ufma.nti.forum.api.model.Topico;
+import br.ufma.nti.forum.api.repository.CategoriaRepository;
 import br.ufma.nti.forum.api.repository.TopicoRepository;
+import br.ufma.nti.forum.api.service.exception.CategoriaInexistenteOuInativaException;
 
 @Service
 public class TopicoService {
 	
 	@Autowired
 	private TopicoRepository topicoRepository;
+	
+	@Autowired
+	private CategoriaRepository categoriaRepository;
 
 	public Topico criar(Topico topico) {
+		
+		Categoria categoria = categoriaRepository.findOne(topico.getCategoria().getCodigo());
+		if(categoria == null || categoria.isInativo() ) {
+			throw new CategoriaInexistenteOuInativaException();
+		}
 		
 		topico.setCriadoEm(LocalDateTime.now());
 		
