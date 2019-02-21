@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "376008d3-d2a4-4398-b44c-0516db19b8b1",
+		"_postman_id": "93997124-7bdb-480e-b15e-cc568ed4b4f2",
 		"name": "CursoApiRESTSpringBoot-UFMA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -267,6 +267,144 @@
 					"path": [
 						"topicos",
 						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ativar-Desativar Topico",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "true"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos/1/ativo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"1",
+						"ativo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nova Mensagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"texto\":\"Esta é uma mensagem 3 em resposta a mensagem 2!\",\n\t\"topico\":{\n\t\t\"codigo\":1\n\t},\n\t\"respostaA\":{\n\t\t\"codigo\":2\n\t}\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Mensagens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Mensagem",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Mensagem",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"texto\":\"Esta é a mensagem 2!\",\n\t\"topico\":{\n\t\t\"codigo\":1\n\t}\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/mensagens/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens",
+						"2"
 					]
 				}
 			},

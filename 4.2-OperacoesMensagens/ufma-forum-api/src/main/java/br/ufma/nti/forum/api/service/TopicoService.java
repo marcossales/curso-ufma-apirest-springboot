@@ -46,18 +46,18 @@ public class TopicoService {
 		return topicoRepository.save(topicoSalvo);
 	}
 
-	/*public void atualizarPropriedadeAtivo(Long codigo, Boolean ativo) {
-		Topico topicoSalva = buscarTopicoPeloCodigo(codigo);
-		topicoSalva.setAtivo(ativo);
-		topicoRepository.save(topicoSalva);
-	}*/
+	public void atualizarPropriedadeAtivo(Long codigo, Boolean ativo) {
+		Topico topicoSalvo = buscarTopicoPeloCodigo(codigo);
+		topicoSalvo.setAtivo(ativo);
+		topicoRepository.save(topicoSalvo);
+	}
 
-	/*private Topico buscarTopicoPeloCodigo(Long codigo) {
+	private Topico buscarTopicoPeloCodigo(Long codigo) {
 		Topico topicoSalvo = topicoRepository.findOne(codigo);
 		if(topicoSalvo==null) {
 			throw new EmptyResultDataAccessException(1);
 		}
 		return topicoSalvo;
-	}*/
+	}
 
 }
