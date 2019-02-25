@@ -51,14 +51,14 @@ public class MensagemRepositoryImpl implements MensagemRepositoryQuery {
 		}
 		if(mensagemFilter.getDataPostagemDe() != null) {
 			predicates.add(builder.greaterThanOrEqualTo(
-													root.get(Mensagem_.postadoEm), mensagemFilter.getDataPostagemDe()
+													root.get(Mensagem_.postadoEm), mensagemFilter.getDataPostagemDe().atStartOfDay()
 									)
 						);
 		}
 		if(mensagemFilter.getDataPostagemAte() != null) {
 			predicates.add(
 					builder.lessThanOrEqualTo(
-										root.get(Mensagem_.postadoEm), mensagemFilter.getDataPostagemAte()
+										root.get(Mensagem_.postadoEm), mensagemFilter.getDataPostagemAte().atTime(23, 59, 59)
 										)
 					);
 		}

@@ -1,33 +1,34 @@
 package br.ufma.nti.forum.api.repository.filter;
 
-import java.time.LocalDateTime;
-
+import java.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 public class MensagemFilter {
 	
 	private String texto;
 	
-	@DateTimeFormat(pattern ="yyyy-MM-dd")
-	private LocalDateTime dataPostagemDe;
-	@DateTimeFormat(pattern ="yyyy-MM-dd")
-	private LocalDateTime dataPostagemAte;
+	@DateTimeFormat(iso=ISO.DATE)
+	private LocalDate dataPostagemDe;
+	
+	@DateTimeFormat(iso=ISO.DATE)
+	private LocalDate dataPostagemAte;
 	public String getTexto() {
 		return texto;
 	}
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-	public LocalDateTime getDataPostagemDe() {
+	public LocalDate getDataPostagemDe() {
 		return dataPostagemDe;
 	}
-	public void setDataPostagemDe(LocalDateTime dataPostagemDe) {
+	public void setDataPostagemDe(LocalDate dataPostagemDe) {
 		this.dataPostagemDe = dataPostagemDe;
 	}
-	public LocalDateTime getDataPostagemAte() {
+	public LocalDate getDataPostagemAte() {
 		return dataPostagemAte;
 	}
-	public void setDataPostagemAte(LocalDateTime dataPostagemAte) {
+	public void setDataPostagemAte(LocalDate dataPostagemAte) {
 		this.dataPostagemAte = dataPostagemAte;
 	}
 

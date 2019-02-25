@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "93997124-7bdb-480e-b15e-cc568ed4b4f2",
+		"_postman_id": "c0de21ec-f002-4656-9c7a-50626c48a484",
 		"name": "CursoApiRESTSpringBoot-UFMA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -317,7 +317,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\t\n\t\"texto\":\"Esta é uma mensagem 3 em resposta a mensagem 2!\",\n\t\"topico\":{\n\t\t\"codigo\":1\n\t},\n\t\"respostaA\":{\n\t\t\"codigo\":2\n\t}\n\t\n\t\n}"
+					"raw": "{\t\n\t\"texto\":\"Esta é uma mensagem X!\",\n\t\"topico\":{\n\t\t\"codigo\":1\n\t},\n\t\"respostaA\":{\n\t\t\"codigo\":2\n\t}\n\t\n\t\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/mensagens",
@@ -405,6 +405,39 @@
 					"path": [
 						"mensagens",
 						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar Mensagens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens?dataPostagemDe=2019-02-25&dataPostagemAte=2019-02-25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					],
+					"query": [
+						{
+							"key": "dataPostagemDe",
+							"value": "2019-02-25"
+						},
+						{
+							"key": "dataPostagemAte",
+							"value": "2019-02-25"
+						}
 					]
 				}
 			},

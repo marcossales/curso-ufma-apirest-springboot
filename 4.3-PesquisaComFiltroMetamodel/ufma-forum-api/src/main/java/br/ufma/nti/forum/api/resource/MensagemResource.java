@@ -53,7 +53,7 @@ public class MensagemResource {
 	private MessageSource messageSource;
 	
 	@GetMapping
-	public List<Mensagem> listar(MensagemFilter mensagemFilter){
+	public List<Mensagem> pesquisar(MensagemFilter mensagemFilter){
 		return mensagemRepository.filtrar(mensagemFilter);
 	}
 	
