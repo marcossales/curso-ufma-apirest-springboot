@@ -446,6 +446,54 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Remover Tópico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/topicos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Mensagem",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens",
+						"4"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
