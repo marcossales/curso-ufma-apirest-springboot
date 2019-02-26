@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+
+import br.ufma.nti.forum.api.model.Topico;
+
 public class MensagemFilter {
 	
 	private String texto;
@@ -13,6 +16,10 @@ public class MensagemFilter {
 	
 	@DateTimeFormat(iso=ISO.DATE)
 	private LocalDate dataPostagemAte;
+	
+	
+	private Long topico;
+	
 	public String getTexto() {
 		return texto;
 	}
@@ -31,6 +38,13 @@ public class MensagemFilter {
 	public void setDataPostagemAte(LocalDate dataPostagemAte) {
 		this.dataPostagemAte = dataPostagemAte;
 	}
+	public Long getTopico() {
+		return topico;
+	}
+	public void setTopico(Long topico) {
+		this.topico = topico;
+	}
+	
 
 	
 

@@ -420,7 +420,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/mensagens?dataPostagemDe=2019-02-25&dataPostagemAte=2019-02-25",
+					"raw": "http://localhost:8080/mensagens?dataPostagemDe=2019-02-25&dataPostagemAte=2019-02-25&topico=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -437,6 +437,10 @@
 						{
 							"key": "dataPostagemAte",
 							"value": "2019-02-25"
+						},
+						{
+							"key": "topico",
+							"value": "1"
 						}
 					]
 				}

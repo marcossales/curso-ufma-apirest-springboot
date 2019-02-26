@@ -15,6 +15,7 @@ import org.springframework.util.StringUtils;
 
 import br.ufma.nti.forum.api.model.Mensagem;
 import br.ufma.nti.forum.api.model.Mensagem_;
+import br.ufma.nti.forum.api.model.Topico_;
 import br.ufma.nti.forum.api.repository.filter.MensagemFilter;
 
 public class MensagemRepositoryImpl implements MensagemRepositoryQuery {
@@ -60,6 +61,14 @@ public class MensagemRepositoryImpl implements MensagemRepositoryQuery {
 					builder.lessThanOrEqualTo(
 										root.get(Mensagem_.postadoEm), mensagemFilter.getDataPostagemAte().atTime(23, 59, 59)
 										)
+					);
+		}
+		
+		if(mensagemFilter.getTopico()!=null) {
+			predicates.add(
+					builder.equal(
+							root.get(Mensagem_.topico).get(Topico_.codigo),mensagemFilter.getTopico()
+							)
 					);
 		}
 		return predicates.toArray(new Predicate[predicates.size()]);
