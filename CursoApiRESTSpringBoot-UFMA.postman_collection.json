@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e396d844-7db9-4317-bf06-f497fcf567aa",
+		"_postman_id": "961d5456-85b6-4f73-bfcd-cb091f825958",
 		"name": "CursoApiRESTSpringBoot-UFMA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -635,7 +635,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 273882f5-dcb5-44ea-9567-62bf97511bcf",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTEzMjAyMjYsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ST0xFIl0sImp0aSI6IjUwY2Q2Mzg3LWMyMjItNGI5Ny05ZTY4LWNhZTk0ZWI5ZjdmMSIsImNsaWVudF9pZCI6ImpzZiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.Zvi0Q-OUzxa6NFWte6D1bB10Z1zYz8_YeFTz6jX8ArE",
 						"type": "text"
 					}
 				],
@@ -662,6 +662,63 @@
 							"key": "page",
 							"value": "0"
 						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth-Novo Access Token via Refresh Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "j$f0101",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "jsf",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhdGkiOiJhN2ZkMzgwNy01ODg2LTQ3N2EtODIzZi03MDUyNDVkN2MzODUiLCJleHAiOjE1NTE0MDU5ODgsImF1dGhvcml0aWVzIjpbIlJPTEVfUk9MRSJdLCJqdGkiOiIyMWZkMTdiNS1mMGVlLTQyYmQtOWRmYi1lZGU4YmEyMjU4MzIiLCJjbGllbnRfaWQiOiJqc2YifQ.SKo4jwTSMKKAQJd488Z8H2pnPiVjys80G0Rx7u_QS5g",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
 					]
 				}
 			},
