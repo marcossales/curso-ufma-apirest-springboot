@@ -13,7 +13,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import ch.qos.logback.core.joran.spi.DefaultClass;
 
 @Entity
 @Table(name="topico")
