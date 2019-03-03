@@ -5,7 +5,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 
-import br.ufma.nti.forum.api.model.Topico;
 
 public class MensagemFilter {
 	

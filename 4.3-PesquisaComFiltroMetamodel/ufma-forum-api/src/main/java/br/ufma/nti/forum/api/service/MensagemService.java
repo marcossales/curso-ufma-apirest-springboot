@@ -7,13 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 
-import br.ufma.nti.forum.api.model.Categoria;
 import br.ufma.nti.forum.api.model.Mensagem;
 import br.ufma.nti.forum.api.model.Topico;
-import br.ufma.nti.forum.api.repository.CategoriaRepository;
 import br.ufma.nti.forum.api.repository.MensagemRepository;
 import br.ufma.nti.forum.api.repository.TopicoRepository;
-import br.ufma.nti.forum.api.service.exception.CategoriaInexistenteOuInativaException;
 import br.ufma.nti.forum.api.service.exception.TopicoInexistenteOuInativoException;
 
 @Service

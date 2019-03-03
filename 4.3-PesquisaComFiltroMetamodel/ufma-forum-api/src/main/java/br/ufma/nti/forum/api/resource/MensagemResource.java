@@ -24,13 +24,9 @@ import org.springframework.web.bind.annotation.RestController;
 import br.ufma.nti.forum.api.event.RecursoCriadoEvent;
 import br.ufma.nti.forum.api.exceptionhandler.UfmaForumExceptionHandler.Erro;
 import br.ufma.nti.forum.api.model.Mensagem;
-import br.ufma.nti.forum.api.model.Topico;
 import br.ufma.nti.forum.api.repository.MensagemRepository;
-import br.ufma.nti.forum.api.repository.TopicoRepository;
 import br.ufma.nti.forum.api.repository.filter.MensagemFilter;
 import br.ufma.nti.forum.api.service.MensagemService;
-import br.ufma.nti.forum.api.service.TopicoService;
-import br.ufma.nti.forum.api.service.exception.CategoriaInexistenteOuInativaException;
 import br.ufma.nti.forum.api.service.exception.TopicoInexistenteOuInativoException;
 
 @RestController
