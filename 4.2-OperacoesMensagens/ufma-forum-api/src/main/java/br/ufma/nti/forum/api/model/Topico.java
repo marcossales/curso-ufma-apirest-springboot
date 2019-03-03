@@ -16,7 +16,6 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import ch.qos.logback.core.joran.spi.DefaultClass;
 
 @Entity
 @Table(name="topico")
