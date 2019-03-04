@@ -598,7 +598,7 @@
 						},
 						{
 							"key": "username",
-							"value": "admin",
+							"value": "admin@forum-ufma.br",
 							"type": "text"
 						},
 						{
@@ -635,7 +635,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTE1ODA0NjgsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ST0xFIl0sImp0aSI6ImExYTJlMmE0LTUxMDQtNDk0My04ZWRiLTYzNThhZDlmY2E0ZiIsImNsaWVudF9pZCI6ImpzZiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.HF76QfmSJTiGgYN6ylSZRwAWW1LzsS-lIMpxBEKVGR8",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTE2MzExMjAsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ST0xFIl0sImp0aSI6IjgzZTQ5ZGVjLTI1NmYtNDNjMi1iNWYzLWQ3OGJmODU4YzBmMSIsImNsaWVudF9pZCI6ImpzZiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.NNWMGKgegPB5FC4p5Hzzj5OIChhy1b-5k_MeFDTZ3yc",
 						"type": "text"
 					}
 				],
@@ -705,7 +705,8 @@
 						{
 							"key": "refresh_token",
 							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhdGkiOiJmZmQ5MzY5My0yYTE4LTQ3YmItODdiMy04YTdhNmVmYzJiYzIiLCJleHAiOjE1NTE2NjY3ODAsImF1dGhvcml0aWVzIjpbIlJPTEVfUk9MRSJdLCJqdGkiOiI4OGIyZmY2Yi02NzM3LTQxNGMtOTQxYS1jMjA3Y2U3ZjJmYjIiLCJjbGllbnRfaWQiOiJqc2YifQ.eHccDpbfaA7Oeb1wumMJGgfMEaNBr_3DvAJovane-mE",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
