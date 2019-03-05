@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2c109140-aee2-48a2-8ad6-d38f97576f3e",
+		"_postman_id": "cc9fff69-6c0a-49e2-86e0-68006b3b5e49",
 		"name": "CursoApiRESTSpringBoot-UFMA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -522,6 +522,35 @@
 						{
 							"key": "page",
 							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resumir Mensagens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens?resumo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					],
+					"query": [
+						{
+							"key": "resumo",
+							"value": null
 						}
 					]
 				}
