@@ -20,6 +20,7 @@ import br.ufma.nti.forum.api.model.Mensagem;
 import br.ufma.nti.forum.api.model.Mensagem_;
 import br.ufma.nti.forum.api.model.Topico_;
 import br.ufma.nti.forum.api.repository.filter.MensagemFilter;
+import br.ufma.nti.forum.api.repository.projection.ResumoMensagem;
 
 public class MensagemRepositoryImpl implements MensagemRepositoryQuery {
 
@@ -43,8 +44,31 @@ public class MensagemRepositoryImpl implements MensagemRepositoryQuery {
 		return new PageImpl<Mensagem>(query.getResultList(),pageable,total(mensagemFilter));
 		
 	}
+	
+	@Override
+	public Page<ResumoMensagem> resumir(MensagemFilter mensagemFilter, Pageable pageable) {
+		CriteriaBuilder builder = manager.getCriteriaBuilder();
+		CriteriaQuery<ResumoMensagem> criteriaQuery = builder.createQuery(ResumoMensagem.class);
+		Root<Mensagem> root = criteriaQuery.from(Mensagem.class);
+		
+		criteriaQuery.select(builder.construct(ResumoMensagem.class,
+																	root.get(Mensagem_.texto),
+																	root.get(Mensagem_.postadoEm),
+																	root.get(Mensagem_.topico).get(Topico_.titulo)
+											   )
+				            );
+		
+		Predicate[] predicates = criarRestricoes(mensagemFilter, builder, root);
+		criteriaQuery.where(predicates);
+		
+		TypedQuery<ResumoMensagem> query = manager.createQuery(criteriaQuery);
+		adicionarRestricoesPaginacao(query,pageable);
+		
+		
+		return new PageImpl<ResumoMensagem>(query.getResultList(),pageable,total(mensagemFilter));
+	}
 
-	private void adicionarRestricoesPaginacao(TypedQuery<Mensagem> query, Pageable pageable) {
+	private void adicionarRestricoesPaginacao(TypedQuery<?> query, Pageable pageable) {
 		int paginaAtual = pageable.getPageNumber();
 		int totalRegistrosPorPagina = pageable.getPageSize();
 		int primeiroRegistroDaPagina = paginaAtual*totalRegistrosPorPagina;
