@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "2c109140-aee2-48a2-8ad6-d38f97576f3e",
+		"_postman_id": "868923f5-1832-4df4-a10b-69f4b411ec60",
 		"name": "CursoApiRESTSpringBoot-UFMA",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -510,7 +510,13 @@
 			"name": "Filtrar Mensagens Paginadas",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTE3NTk5MjEsInVzZXJfbmFtZSI6ImFkbWluQGZvcnVtLXVmbWEuYnIiLCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9UT1BJQ08iLCJST0xFX0NBREFTVFJBUl9DQVRFR09SSUEiLCJST0xFX1BFU1FVSVNBUl9UT1BJQ08iLCJST0xFX1JFTU9WRVJfTUVOU0FHRU0iLCJST0xFX0NBREFTVFJBUl9NRU5TQUdFTSIsIlJPTEVfUEVTUVVJU0FSX0NBVEVHT1JJQSIsIlJPTEVfUkVNT1ZFUl9DQVRFR09SSUEiLCJST0xFX1JFTU9WRVJfVE9QSUNPIiwiUk9MRV9QRVNRVUlTQVJfTUVOU0FHRU0iXSwianRpIjoiN2IwNGMyMTctZmFhMy00YTY1LTk2MjUtMTY4NWMzNGJmN2ZhIiwiY2xpZW50X2lkIjoianNmIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.LRUj9YQ778geRj9ovWq7Hv2LMpVveHa88XLAEzPxCIw",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
@@ -533,6 +539,41 @@
 						{
 							"key": "page",
 							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resumir Mensagens",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTE3NjA2MjMsInVzZXJfbmFtZSI6ImFkbWluQGZvcnVtLXVmbWEuYnIiLCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9UT1BJQ08iLCJST0xFX0NBREFTVFJBUl9DQVRFR09SSUEiLCJST0xFX1BFU1FVSVNBUl9UT1BJQ08iLCJST0xFX1JFTU9WRVJfTUVOU0FHRU0iLCJST0xFX0NBREFTVFJBUl9NRU5TQUdFTSIsIlJPTEVfUEVTUVVJU0FSX0NBVEVHT1JJQSIsIlJPTEVfUkVNT1ZFUl9DQVRFR09SSUEiLCJST0xFX1JFTU9WRVJfVE9QSUNPIiwiUk9MRV9QRVNRVUlTQVJfTUVOU0FHRU0iXSwianRpIjoiMDA2NjNlNjMtZmE1ZC00OGYzLThmMDYtODE5NTc5MjdhMzQxIiwiY2xpZW50X2lkIjoianNmIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.EixtWWsUfuymCiunpCwxS4070R6Bc38wqOfNt4tkHRY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens?resumo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					],
+					"query": [
+						{
+							"key": "resumo",
+							"value": null
 						}
 					]
 				}
