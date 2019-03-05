@@ -735,6 +735,36 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTE3NTExMzMsInVzZXJfbmFtZSI6ImFkbWluQGZvcnVtLXVmbWEuYnIiLCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9UT1BJQ08iLCJST0xFX0NBREFTVFJBUl9DQVRFR09SSUEiLCJST0xFX1BFU1FVSVNBUl9UT1BJQ08iLCJST0xFX1JFTU9WRVJfTUVOU0FHRU0iLCJST0xFX0NBREFTVFJBUl9NRU5TQUdFTSIsIlJPTEVfUEVTUVVJU0FSX0NBVEVHT1JJQSIsIlJPTEVfUkVNT1ZFUl9DQVRFR09SSUEiLCJST0xFX1JFTU9WRVJfVE9QSUNPIiwiUk9MRV9QRVNRVUlTQVJfTUVOU0FHRU0iXSwianRpIjoiMWEwYWM5MTItNzRkMS00NzUzLTgyYjUtODU4NzhmNmJkMTUxIiwiY2xpZW50X2lkIjoianNmIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19._BcibPRZgDePOFP4RbuXNEjXqY7YJVeJTGzyXV6i37w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/tokens/revoke",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tokens",
+						"revoke"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
