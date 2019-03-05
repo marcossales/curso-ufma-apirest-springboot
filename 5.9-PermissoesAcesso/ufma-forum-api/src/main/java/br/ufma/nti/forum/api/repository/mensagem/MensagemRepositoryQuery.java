@@ -6,9 +6,12 @@ import org.springframework.data.domain.Pageable;
 
 import br.ufma.nti.forum.api.model.Mensagem;
 import br.ufma.nti.forum.api.repository.filter.MensagemFilter;
+import br.ufma.nti.forum.api.repository.projection.ResumoMensagem;
 
 public interface MensagemRepositoryQuery {
 	
 	public Page<Mensagem> filtrar(MensagemFilter mensagemFilter, Pageable pageable);
+
+	Page<ResumoMensagem> resumir(MensagemFilter mensagemFilter, Pageable pageable);
 
 }
