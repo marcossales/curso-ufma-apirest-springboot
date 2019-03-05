@@ -13,7 +13,6 @@ public class ResumoMensagem {
 	
 
 	public ResumoMensagem(String texto, LocalDateTime postadoEm, String topico) {
-		super();
 		this.texto = texto;
 		this.postadoEm = postadoEm;
 		this.topico = topico;
