@@ -12,6 +12,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -50,18 +51,21 @@ public class TopicoResource {
 	private MessageSource messageSource;
 	
 	@GetMapping
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_TOPICO') and #oauth2.hasScope('read')")
 	public List<Topico> listar(){
 		return topicoRepository.findAll();
 	}
 	
 	
 	@GetMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_TOPICO') and #oauth2.hasScope('read')")
 	public ResponseEntity<Topico> buscarPeloCodigo(@PathVariable Long codigo) {
 		 Topico topico = topicoRepository.findOne(codigo);
 		 return topico != null ? ResponseEntity.ok(topico) : ResponseEntity.notFound().build();
 	}
 	
 	@PostMapping
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_TOPICO') and #oauth2.hasScope('write')")
 	public ResponseEntity<Topico> criar(@Valid @RequestBody Topico topico, HttpServletResponse response) {
 		Topico topicoSalvo = topicoService.criar(topico);
 		  
@@ -72,6 +76,7 @@ public class TopicoResource {
 	}
 	
 	@PutMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_TOPICO') and #oauth2.hasScope('write')")
 	public ResponseEntity<Topico> atualizar(@PathVariable Long codigo,@Valid @RequestBody Topico topico){
 		Topico topicoSalvo = topicoService.atualizar(codigo, topico);
 		return ResponseEntity.ok(topicoSalvo);
@@ -87,6 +92,7 @@ public class TopicoResource {
 	
 	@PutMapping("/{codigo}/ativo")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_TOPICO') and #oauth2.hasScope('write')")
 	public void atualizarPropriedadeAtivo(@PathVariable Long codigo, @RequestBody Boolean ativo) {
 		topicoService.atualizarPropriedadeAtivo( codigo, ativo);
 	}
@@ -94,6 +100,7 @@ public class TopicoResource {
 	
 	@DeleteMapping("/{codigo}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@PreAuthorize("hasAuthority('ROLE_REMOVER_TOPICO') and #oauth2.hasScope('write')")
 	public void remover(@PathVariable Long codigo) {
 		topicoRepository.delete(codigo);
 	}

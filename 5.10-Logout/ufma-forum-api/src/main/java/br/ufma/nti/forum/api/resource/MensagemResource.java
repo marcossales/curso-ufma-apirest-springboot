@@ -14,6 +14,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -53,18 +54,21 @@ public class MensagemResource {
 	private MessageSource messageSource;
 	
 	@GetMapping
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_MENSAGEM') and #oauth2.hasScope('read')")
 	public Page<Mensagem> pesquisar(MensagemFilter mensagemFilter,Pageable pageable){
 		return mensagemRepository.filtrar(mensagemFilter,pageable);
 	}
 	
 	
 	@GetMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_MENSAGEM') and #oauth2.hasScope('read')")
 	public ResponseEntity<Mensagem> buscarPeloCodigo(@PathVariable Long codigo) {
 		 Mensagem mensagem = mensagemRepository.findOne(codigo);
 		 return mensagem != null ? ResponseEntity.ok(mensagem) : ResponseEntity.notFound().build();
 	}
 	
 	@PostMapping
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_MENSAGEM') and #oauth2.hasScope('write')")
 	public ResponseEntity<Mensagem> criar(@Valid @RequestBody Mensagem mensagem, HttpServletResponse response) {
 		Mensagem mensagemSalva = mensagemService.criar(mensagem);
 		  
@@ -75,6 +79,7 @@ public class MensagemResource {
 	}
 	
 	@PutMapping("/{codigo}")
+	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_MENSAGEM') and #oauth2.hasScope('write')")
 	public ResponseEntity<Mensagem> atualizar(@PathVariable Long codigo,@Valid @RequestBody Mensagem mensagem){
 		Mensagem mensagemSalva = mensagemService.atualizar(codigo, mensagem);
 		return ResponseEntity.ok(mensagemSalva);
@@ -90,6 +95,7 @@ public class MensagemResource {
 
 	@DeleteMapping("/{codigo}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@PreAuthorize("hasAuthority('ROLE_REMOVER_MENSAGEM') and #oauth2.hasScope('write')")
 	public void remover(@PathVariable Long codigo) {
 		mensagemRepository.delete(codigo);
 	}
