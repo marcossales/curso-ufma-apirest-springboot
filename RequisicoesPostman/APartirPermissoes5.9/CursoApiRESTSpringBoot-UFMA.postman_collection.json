@@ -1,0 +1,740 @@
+{
+	"info": {
+		"_postman_id": "2c109140-aee2-48a2-8ad6-d38f97576f3e",
+		"name": "CursoApiRESTSpringBoot-UFMA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar Categorias",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTE3NDc0NjAsInVzZXJfbmFtZSI6Im1hcmlhQGZvcnVtLXVmbWEuYnIiLCJhdXRob3JpdGllcyI6WyJST0xFX1BFU1FVSVNBUl9UT1BJQ08iLCJST0xFX1BFU1FVSVNBUl9DQVRFR09SSUEiLCJST0xFX1BFU1FVSVNBUl9NRU5TQUdFTSJdLCJqdGkiOiI1OGQ4ZGM3My0yMzNjLTQ0NjMtYWEyZi0zNTZjYTkyNzkzYzQiLCJjbGllbnRfaWQiOiJqc2YiLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXX0.1ZpY4HhOdtDW8wGPgtAKnBO-BqRa0HRD5G7QfXLm0Sg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nova Categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTE3NDg3ODcsInVzZXJfbmFtZSI6ImFkbWluQGZvcnVtLXVmbWEuYnIiLCJhdXRob3JpdGllcyI6WyJST0xFX0NBREFTVFJBUl9UT1BJQ08iLCJST0xFX0NBREFTVFJBUl9DQVRFR09SSUEiLCJST0xFX1BFU1FVSVNBUl9UT1BJQ08iLCJST0xFX1JFTU9WRVJfTUVOU0FHRU0iLCJST0xFX0NBREFTVFJBUl9NRU5TQUdFTSIsIlJPTEVfUEVTUVVJU0FSX0NBVEVHT1JJQSIsIlJPTEVfUkVNT1ZFUl9DQVRFR09SSUEiLCJST0xFX1JFTU9WRVJfVE9QSUNPIiwiUk9MRV9QRVNRVUlTQVJfTUVOU0FHRU0iXSwianRpIjoiNjJkNzk2NTktY2JmYS00NzE1LTkxZDMtYTc3YzBmZTc3YWIzIiwiY2xpZW50X2lkIjoianNmIiwic2NvcGUiOlsicmVhZCIsIndyaXRlIl19.uOwYKfbeolgJWBu6BwN2FWT5s8TfVxLha4Y3OGk1Bqo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \n        \"nome\": \"TESTE\",\n        \"ativo\": true\n    }"
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Categoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/categorias/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Categoria",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/categorias/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Categoria",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"nome\":\"TESTE NOVO\",\n\t\"ativo\": false\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/categorias/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ativar-Desativar Categoria",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "true"
+				},
+				"url": {
+					"raw": "localhost:8080/categorias/1/ativo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"categorias",
+						"1",
+						"ativo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Tópicos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/topicos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Novo Tópico",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\":\"Um titulo qualquer\",\n\t\"descricao\":\"Uma descricao qualquer\",\n\t\"categoria\": {\n\t\t\"codigo\":1\n\t},\n\t\n\t\"ativo\":true\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/topicos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Tópico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/topicos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Tópico",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"titulo\":\"YYYYY\",\n\t\"descricao\": \"YYYYYYYYY\",\n\t\"categoria\":{\n\t\t\"codigo\":1,\n\t\t\"nome\":\"Java2\"\n\t\n\t},\n\t\"ativo\":false\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ativar-Desativar Topico",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "true"
+				},
+				"url": {
+					"raw": "localhost:8080/topicos/1/ativo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"1",
+						"ativo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Nova Mensagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\n\t\"texto\":\"Esta é uma mensagem X!\",\n\t\"topico\":{\n\t\t\"codigo\":1\n\t},\n\t\"respostaA\":{\n\t\t\"codigo\":2\n\t}\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Mensagens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Mensagem",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Mensagem",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"texto\":\"Esta é a mensagem 2!\",\n\t\"topico\":{\n\t\t\"codigo\":1\n\t}\n\t\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/mensagens/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar Mensagens",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens?dataPostagemDe=2019-02-25&dataPostagemAte=2019-02-25&topico=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					],
+					"query": [
+						{
+							"key": "dataPostagemDe",
+							"value": "2019-02-25"
+						},
+						{
+							"key": "dataPostagemAte",
+							"value": "2019-02-25"
+						},
+						{
+							"key": "topico",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Tópico",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/topicos/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"topicos",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remover Mensagem",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar Mensagens Paginadas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens?size=3&page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "3"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BasicAuth-Filtrar Mensagens Paginadas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens?size=3&page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "3"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth-Novo Access Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "j$f0101",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "jsf",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client",
+							"value": "jsf",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin@forum-ufma.br",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth-Filtrar Mensagens Paginadas",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NTE2MzExMjAsInVzZXJfbmFtZSI6ImFkbWluIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9ST0xFIl0sImp0aSI6IjgzZTQ5ZGVjLTI1NmYtNDNjMi1iNWYzLWQ3OGJmODU4YzBmMSIsImNsaWVudF9pZCI6ImpzZiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdfQ.NNWMGKgegPB5FC4p5Hzzj5OIChhy1b-5k_MeFDTZ3yc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/mensagens?size=3&page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mensagens"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "3"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuth-Novo Access Token via Refresh Token",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "j$f0101",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "jsf",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhZG1pbiIsInNjb3BlIjpbInJlYWQiLCJ3cml0ZSJdLCJhdGkiOiJmZmQ5MzY5My0yYTE4LTQ3YmItODdiMy04YTdhNmVmYzJiYzIiLCJleHAiOjE1NTE2NjY3ODAsImF1dGhvcml0aWVzIjpbIlJPTEVfUk9MRSJdLCJqdGkiOiI4OGIyZmY2Yi02NzM3LTQxNGMtOTQxYS1jMjA3Y2U3ZjJmYjIiLCJjbGllbnRfaWQiOiJqc2YifQ.eHccDpbfaA7Oeb1wumMJGgfMEaNBr_3DvAJovane-mE",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
