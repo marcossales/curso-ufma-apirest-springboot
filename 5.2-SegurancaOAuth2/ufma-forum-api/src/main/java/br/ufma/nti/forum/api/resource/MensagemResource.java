@@ -30,6 +30,7 @@ import br.ufma.nti.forum.api.exceptionhandler.UfmaForumExceptionHandler.Erro;
 import br.ufma.nti.forum.api.model.Mensagem;
 import br.ufma.nti.forum.api.repository.MensagemRepository;
 import br.ufma.nti.forum.api.repository.filter.MensagemFilter;
+import br.ufma.nti.forum.api.repository.projection.ResumoMensagem;
 import br.ufma.nti.forum.api.service.MensagemService;
 import br.ufma.nti.forum.api.service.exception.TopicoInexistenteOuInativoException;
 
@@ -55,6 +56,11 @@ public class MensagemResource {
 	@GetMapping
 	public Page<Mensagem> pesquisar(MensagemFilter mensagemFilter,Pageable pageable){
 		return mensagemRepository.filtrar(mensagemFilter,pageable);
+	}
+	
+	@GetMapping(params="resumo")
+	public Page<ResumoMensagem> resumir(MensagemFilter mensagemFilter,Pageable pageable){
+		return mensagemRepository.resumir(mensagemFilter,pageable);
 	}
 	
 	
