@@ -1,5 +1,6 @@
 <!--Página web sendo hospedada por sevidor apache na porta 8000
 Exemplo de um cliente da API para testar CORS-->
+<!DOCTYPE html>
 <html >
    
     <body>
@@ -12,11 +13,11 @@ Exemplo de um cliente da API para testar CORS-->
                 var req = new XMLHttpRequest();
                 req.addEventListener("load",printResponse);
                 req.open("GET","http://localhost:8080/categorias");
-                //req.setRequestHeader("header1","valor");
+                req.setRequestHeader("header1","valor");
 
                 req.send(); 
             }
         </script>
 
     </body>    
-<html>
+</html>
